@@ -1,6 +1,6 @@
 {
   "name": "mi-youtube-music",
-  "version": "1.0.0",
+  "version": "1.0_beta",
   "description": "Cliente de escritorio para YouTube Music",
   "main": "main.js",
   "homepage": "https://github.com/devCcori/yt-music-app",
