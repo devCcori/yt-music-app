@@ -1,6 +1,6 @@
 {
   "name": "mi-youtube-music",
-  "version": "1.0_beta",
+  "version": "1.0.0-beta",
   "description": "Cliente de escritorio para YouTube Music",
   "main": "main.js",
   "homepage": "https://github.com/devCcori/yt-music-app",
@@ -25,6 +25,13 @@
     "productName": "YouTube Music",
     "directories": {
       "output": "dist"
+    },
+
+    "publish": {
+      "provider": "github",
+      "owner": "devCcori",
+      "repo": "yt-music-app",
+      "releaseType": "prerelease"
     },
     
     "win": {
@@ -53,5 +60,8 @@
       "category": "Audio",
       "icon": "icon.png"
     }
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   }
 }
