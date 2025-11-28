@@ -1,0 +1,39 @@
+{
+  "name": "mi-youtube-music",
+  "version": "1.0.0",
+  "description": "Cliente de escritorio para YouTube Music",
+  "main": "main.js",
+  "homepage": "https://github.com/devCcori/yt-music-app",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "author": {
+    "name": "Ccori",
+    "email": "lvpccori@gmail.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.archuser.ytmusic",
+    "productName": "YouTube Music",
+    "linux": {
+      "target": ["AppImage", "pacman"],
+      "maintainer": "Ccori <lvpccori@gmail.com>",
+      "category": "Audio",
+      "icon": "icon.png"
+    },
+    "pacman": {
+      "depends": [
+        "nss",
+        "gtk3",
+        "libnotify",
+        "xdg-utils",
+        "libsecret"
+      ]
+    }
+  }
+}
