@@ -14,14 +14,20 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "electron": "^33.0.0",
-    "electron-builder": "^25.1.8"
+    "electron": "^39.2.4",
+    "electron-builder": "^26.0.12"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
   },
   "build": {
     "appId": "com.archuser.ytmusic",
     "productName": "YouTube Music",
     "linux": {
-      "target": ["AppImage", "pacman"],
+      "target": [
+        "AppImage",
+        "pacman"
+      ],
       "maintainer": "Ccori <lvpccori@gmail.com>",
       "category": "Audio",
       "icon": "icon.png"

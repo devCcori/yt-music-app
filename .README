@@ -1,0 +1,83 @@
+### YouTube Music - Desktop App (Edición Arch Linux)
+
+#### Descripción
+Una aplicación de escritorio ligera para YouTube Music creada con Electron, diseñada específicamente para integrarse con **Oh My Posh** en Linux.
+
+#### Características
+- **Nativo**: Funciona como una aplicación de escritorio independiente (sin barra de navegador).
+- **Ligero**: Basado en Electron con configuraciones mínimas.
+- **Atajos Multimedia**: Soporta teclas globales (Play/Pause, Siguiente, Anterior).
+- **Integración con Oh My Posh**: Expone una API local en el puerto 9863 compatible con el segmento `ytm` de Oh My Posh.
+- **Sin Distracciones**: Bloquea anuncios y pop-ups externos.
+
+---
+
+### Instalación (Arch Linux)
+
+#### Opción 1: Archivo Pacman (Recomendado)
+1. Descarga el archivo `.pacman` de la sección de **Releases**.
+2. Instálalo usando el siguiente comando:
+   ```bash
+   sudo pacman -U mi-youtube-music-1.0.0.pacman
+   ```
+
+#### Opción 2: AppImage
+1. Descarga el archivo `.AppImage`.
+2. Dale permisos de ejecución:
+   ```bash
+   chmod +x YouTube-Music-1.0.0.AppImage
+   ```
+3. Ejecuta el archivo sin necesidad de instalarlo:
+   ```bash
+   ./YouTube-Music-1.0.0.AppImage
+   ```
+
+---
+
+### Configuración de Oh My Posh
+
+Esta aplicación emula la API de "YouTube Music Desktop App" para que tu terminal muestre la canción actual.
+
+1. Añade (o modifica) el bloque `ytm` en tu archivo de configuración de tema de Oh My Posh:
+   ```json
+   {
+     "type": "ytm",
+     "style": "diamond",
+     "leading_diamond": "\ue0b2",
+     "background": "#1BD760",
+     "foreground": "#111111",
+     "properties": {
+       "paused_icon": "\uf04c ",
+       "playing_icon": "\uf04b "
+     },
+     "template": " \uf167 {{ .Icon }}{{ if ne .Status \"stopped\" }}{{ .Artist }} - {{ .Track }}{{ end }} "
+   }
+   ```
+2. **Nota**: La aplicación debe estar abierta para que el segmento aparezca.
+
+---
+
+### Desarrollo y Compilación
+
+Si deseas modificar el código fuente:
+
+1. Clona el repositorio.
+2. Instala las dependencias:
+   ```bash
+   npm install
+   ```
+3. Prueba en desarrollo:
+   ```bash
+   npm start
+   ```
+4. Crea instaladores (AppImage y Pacman):
+   ```bash
+   npm run build
+   ```
+   Los archivos resultantes estarán en la carpeta `dist/`.
+
+---
+
+### Licencia
+
+Este proyecto es una herramienta no oficial y no está afiliada a Google ni a YouTube. Distribuido bajo la licencia MIT.
