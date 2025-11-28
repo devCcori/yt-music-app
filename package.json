@@ -20,26 +20,38 @@
   "dependencies": {
     "express": "^5.1.0"
   },
-  "build": {
+"build": {
     "appId": "com.archuser.ytmusic",
     "productName": "YouTube Music",
+    "directories": {
+      "output": "dist"
+    },
+    
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64", "ia32"]
+        }
+      ],
+      "icon": "icon.ico"
+    },
+    
+    "mac": {
+      "target": "dmg",
+      "category": "public.app-category.music",
+      "icon": "icon.png"
+    },
+    
     "linux": {
       "target": [
         "AppImage",
-        "pacman"
+        "pacman",
+        "deb" 
       ],
       "maintainer": "Ccori <lvpccori@gmail.com>",
       "category": "Audio",
       "icon": "icon.png"
-    },
-    "pacman": {
-      "depends": [
-        "nss",
-        "gtk3",
-        "libnotify",
-        "xdg-utils",
-        "libsecret"
-      ]
     }
   }
 }
